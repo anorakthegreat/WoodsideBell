@@ -282,6 +282,8 @@ const SchoolBell = () => {
 
       }
 
+      console.log("INDICATOR ARAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY" + indicatorArray)
+
       // realStart.setDate(2)
 
       
