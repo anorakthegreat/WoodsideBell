@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/WoodsideBell/static/css/main.b3923195.css",
-    "main.js": "/WoodsideBell/static/js/main.f865020f.js",
+    "main.js": "/WoodsideBell/static/js/main.baa2cb18.js",
     "static/js/453.bb2196f4.chunk.js": "/WoodsideBell/static/js/453.bb2196f4.chunk.js",
     "static/media/bannerlogo.webp": "/WoodsideBell/static/media/bannerlogo.eddcc681e1e81587fed8.webp",
     "static/media/logo.svg": "/WoodsideBell/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/WoodsideBell/index.html",
     "main.b3923195.css.map": "/WoodsideBell/static/css/main.b3923195.css.map",
-    "main.f865020f.js.map": "/WoodsideBell/static/js/main.f865020f.js.map",
+    "main.baa2cb18.js.map": "/WoodsideBell/static/js/main.baa2cb18.js.map",
     "453.bb2196f4.chunk.js.map": "/WoodsideBell/static/js/453.bb2196f4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b3923195.css",
-    "static/js/main.f865020f.js"
+    "static/js/main.baa2cb18.js"
   ]
 }
