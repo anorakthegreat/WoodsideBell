@@ -1,0 +1,136 @@
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+  
+.schedule-table th,
+.schedule-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+  
+.schedule-table th {
+    background-color: #FFA500;
+    color: white;
+}
+  
+.schedule-table tr:hover td {
+    background-color: #f0f0f0;
+}
+
+/* .schedule-container {
+    margin: 20px;
+} */
+
+.schedule-container {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+  }
+  
+  h2 {
+    margin-top: 5px;
+    font-size: calc(1.1rem + 0.5vw); /* Font size based on viewport width */
+  }
+
+
+
+
+
+/* CHATGPT */
+/* .schedule-container {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .schedule-table {
+    width: 100%;
+    max-width: 800px; 
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .schedule-table th,
+  .schedule-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+  }
+  
+  .schedule-table th {
+    background-color: #FFA500;
+    color: white;
+  }
+  
+  .schedule-table tr:hover td {
+    background-color: #f0f0f0;
+  } */
+
+
+
+
+p {
+    font-size: 14px;
+    padding: 8px;
+    border: 2px solid #2196f3; /* Blue color for A day */
+    border-radius: 3px;
+    display: inline-block;
+    background-color: #e3f2fd; /* Light blue background */
+    margin: 0;
+}
+
+.h3-container {
+    display: block;
+    margin-right: 10px; /* Adjust margin as needed */
+}
+
+h3 {
+    font-size: 14px;
+    padding: 8px;
+    border: 2px solid #2196f3; 
+    border-radius: 3px;
+    background-color: #e3f2fd;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal; /* Ensure the font-weight is normal */
+
+}
+
+.top-left-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.dropdown-container {
+    margin-top: 20px;
+  }
+  
+.dropdown-select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+  
+.dropdown-select:focus {
+    border-color: #007bff; /* Change border color when focused */
+}
+
+  
+  
