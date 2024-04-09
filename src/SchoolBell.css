@@ -37,7 +37,15 @@
   
   h2 {
     margin-top: 5px;
-    font-size: calc(1.1rem + 0.5vw); /* Font size based on viewport width */
+    font-size: 25px; /* Font size based on viewport width */
+    font-family: "Times New Roman", Times, serif;
+    /* font-family: Helvetica, Arial, sans-serif; */
+    font-weight: 550;
+    /* color: #f68e06; */
+    text-decoration: underline;
+
+
+
   }
 
 
@@ -132,5 +140,105 @@ h3 {
     border-color: #007bff; /* Change border color when focused */
 }
 
+img {
+  width: 100px; /* Adjust width for smaller screens */
+  height: 100px;
+}
+
+td{
+  font-size: 15px
+}
+
+/* 10px */
+
+
+
+
+@media screen and (max-width: 540px) {
+  td {
+    font-size: 12px; 
+  }
+
+  h2{
+    font-size: 18px;
+    width: 300px;
+  }
+
+  img {
+    width: 75px; /* Adjust width for smaller screens */
+    height: 75px;
+  }
+
+  .text-container {
+    /* Force line break into two lines */
+    width: 100%; /* Make sure the container takes full width */
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+  td {
+    font-size: 12px; 
+  }
+
+  h2{
+    font-size: 15px;
+    width: 300px;
+  }
+
+  img {
+    width: 75px; 
+    height: 75px;
+  }
+
+  .text-container {
+    width: 100%; 
+  }
+
+  p{
+    font-size: 12px;
+  }
+
+  h3{
+    font-size: 12px;
+  }
+
+}
+
+@media screen and (max-width: 340px) {
+  td {
+    font-size: 10px; 
+  }
+
+  h2{
+    font-size: 15px;
+    width: 200px;
+    margin-bottom: 10px;
+  }
+
+  img {
+    width: 75px; /* Adjust width for smaller screens */
+    height: 75px;
+  }
+
+  .text-container {
+    /* Force line break into two lines */
+    width: 100%; /* Make sure the container takes full width */
+  }
+
+  p{
+    font-size: 10px;
+  }
+
+  h3{
+    font-size: 10px;
+  }
+
+
+}
+
+
+
+  
   
   

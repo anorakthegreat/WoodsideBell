@@ -245,7 +245,7 @@ const SchoolBell = () => {
       
       console.log("DURRR: " + dur)
       dur = dur / 60000
-      data[i].duration = dur
+      data[i].duration = Math.round(dur);
 
     }
 
@@ -327,9 +327,6 @@ const SchoolBell = () => {
           }
         }
       }
-      for(let i = 0; i < indicatorArray.length; i++){
-        console.log(indicatorArray[i])
-      }
 
 
       if(specialString == "Break"){
@@ -410,6 +407,7 @@ const SchoolBell = () => {
 
         if(iter.getTime() == newNew.getTime()){
           rawType = "A DAY "
+          specialString = ""
         }
 
       }
@@ -1190,17 +1188,19 @@ const getDayy3 = (withDate, date) => {
           src={logo}
           alt="a"
           style={{
-            position: 'fixed',
+            position: 'absolute',
             top: '10px', 
             right: '20px', 
-            width: '100px',
-            height: 'auto', 
             zIndex: 9999 
           }}
         />
       </a>
 
-      <h2>Woodside High School Bell Schedule</h2>
+      
+      <div class = "text-container">
+        <h2>Woodside High School Bell Schedule</h2>
+      </div>
+
       <p>{beforeDay} {dayType}: {dotw}</p>
       
       {/* <h3>{timeLeft}</h3> */}

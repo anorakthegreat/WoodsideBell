@@ -3,7 +3,7 @@ export const dayWed = {
         { period: '1st period', time: '8:30 AM - 9:20 AM', duration: "0"},
         { period: 'Passing Period', time: '9:20 AM - 9:30 AM', duration: "0"},
         { period: 'x', time: '9:30 AM - 10:50 AM', duration: "0" },
-        { period: 'Brunch', time: '11:50 AM - 11:00 AM', duration: "0" },
+        { period: 'Brunch', time: '10:50 AM - 11:00 AM', duration: "0" },
         { period: 'Passing Period', time: '11:00 AM - 11:10 AM', duration: "0" },
         { period: 'x', time: '11:10 AM - 12:35 PM', duration: "0" },
         { period: 'Lunch', time: '12:35 PM - 1:05 PM', duration: "0" },
