@@ -980,6 +980,8 @@ const getDayy3 = (withDate, date) => {
       // Assuming data is separated by newlines in the text file
       const lines = text.replace(/\r/g, '').split('\n');
 
+      console.log("RESPONSE: " + text)
+
       // console.log("DATA ARRAY------------------------------------------------------ " + dataArray[0][0] )
 
       // const parsedArrays = lines.map(line => JSON.parse(line));
@@ -992,6 +994,7 @@ const getDayy3 = (withDate, date) => {
         // console.log(indicatorr)
 
         let validJSONString = array.replace(/'/g, '"');
+        console.log("VALID " + validJSONString)
         let dateArray = JSON.parse(validJSONString);
 
         let obj = {
