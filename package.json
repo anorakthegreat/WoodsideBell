@@ -1,6 +1,5 @@
 {
   "comment" : "you have to remove the homepage for running locally and add it back for the site, or else the text file thing will break",
-  "homepage": "http://anorakthegreat.github.io/WoodsideBell",
   "name": "scehduale",
   "version": "0.1.0",
   "private": true,

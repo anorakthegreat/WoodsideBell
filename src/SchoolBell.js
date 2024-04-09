@@ -296,6 +296,9 @@ const SchoolBell = () => {
         specialString = "Wed"
       }
 
+      
+
+
 
       if(indicatorArray.length == 0){
         return ""
@@ -973,67 +976,78 @@ const getDayy3 = (withDate, date) => {
   // setInterval(loggg, 10)
 
   const fetchData2 = async () => {
-    try {
+    // try {
 
-      let glo = []
+    //   let glo = []
 
-      // Make asynchronous request using Axios
-      // console.log("I RAN IT=----------------------------------------------------------------------------------------------------------------------------------------------------------------------")
-      // const response = await axios.get('https://script.google.com/macros/s/AKfycbwx6yUfh5uOTJ2XNGQVRYNpJrCBY4xE-GtudHcsq2EMo7GESKo843_KzntaWhRd8mb4dw/exec');
+    //   // Make asynchronous request using Axios
+    //   // console.log("I RAN IT=----------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+    //   // const response = await axios.get('https://script.google.com/macros/s/AKfycbwx6yUfh5uOTJ2XNGQVRYNpJrCBY4xE-GtudHcsq2EMo7GESKo843_KzntaWhRd8mb4dw/exec');
 
-      const response2 = await fetch('./datar.txt');
-      const text = await response2.text();
-      // Assuming data is separated by newlines in the text file
-      const lines = text.replace(/\r/g, '').split('\n');
+    //   const response2 = await fetch('./datar.txt');
+    //   const text = await response2.text();
+    //   // Assuming data is separated by newlines in the text file
+    //   const lines = text.replace(/\r/g, '').split('\n');
 
-      console.log("RESPONSE: " + text)
+    //   console.log("RESPONSE: " + text)
 
-      // console.log("DATA ARRAY------------------------------------------------------ " + dataArray[0][0] )
+    //   // console.log("DATA ARRAY------------------------------------------------------ " + dataArray[0][0] )
 
-      // const parsedArrays = lines.map(line => JSON.parse(line));
+    //   // const parsedArrays = lines.map(line => JSON.parse(line));
 
-      for (const line of lines) {
-        // console.log(line)
+    //   for (const line of lines) {
+    //     // console.log(line)
 
-        const [array, indicatorr] = line.split(' = '); 
-        // console.log("BLLLLLLLLLLLLLAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
-        // console.log(indicatorr)
+    //     const [array, indicatorr] = line.split(' = '); 
+    //     // console.log("BLLLLLLLLLLLLLAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
+    //     // console.log(indicatorr)
 
-        let validJSONString = array.replace(/'/g, '"');
-        console.log("VALID " + validJSONString)
-        let dateArray = JSON.parse(validJSONString);
+    //     let validJSONString = array.replace(/'/g, '"');
+    //     console.log("VALID " + validJSONString)
+    //     let dateArray = JSON.parse(validJSONString);
 
-        let obj = {
-          arr: dateArray,
-          ind: indicatorr
-        };
-        // console.log("ARRYYAY")
+    //     let obj = {
+    //       arr: dateArray,
+    //       ind: indicatorr
+    //     };
+    //     // console.log("ARRYYAY")
 
-        // console.log(array)
-        // console.log(array[0])
+    //     // console.log(array)
+    //     // console.log(array[0])
 
-        glo.push(obj)
+    //     glo.push(obj)
 
 
-      }
+    //   }
 
-      // for(let i = 0; i < glow.length; i++){
+    //   // for(let i = 0; i < glow.length; i++){
 
-      // }
+    //   // }
 
-      // console.log("NEW NEW NEW NEW ++++++++++++++++++++++++++++++++++++++++++++++")
-      // console.log(glo)
-      setIndicator(glo)
-      // console.log("I HAVE FINSIEHD=----------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+    //   // console.log("NEW NEW NEW NEW ++++++++++++++++++++++++++++++++++++++++++++++")
+    //   // console.log(glo)
+    //   setIndicator(glo)
 
-      return "BAHAHAHFIFILSRIBHRIRWHLIWBRIL"
+      
+    //   // console.log("I HAVE FINSIEHD=----------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+
+    //   return "BAHAHAHFIFILSRIBHRIRWHLIWBRIL"
 
       
 
 
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
+    // } catch (error) {
+    //   console.error('Error fetching data:', error);
+    // }
+
+    let datta = [
+      { arr: ['2024-04-08T00:00:00-08:00', '2024-04-09T00:00:00-08:00', '2024-04-10T00:00:00-08:00', '2024-04-11T00:00:00-08:00', '2024-04-12T00:00:00-08:00'], ind: "Break"},
+      { arr: ['2024-03-05T00:00:00-08:00', '2024-04-15T00:00:00-08:00'], ind: "A Day"},
+      { arr: ['2024-04-05T00:00:00-08:00'], ind: "Wildcat"}
+
+    ]
+
+    setIndicator(datta)
   };
 
   
