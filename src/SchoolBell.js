@@ -324,6 +324,10 @@ const SchoolBell = () => {
           }
         }
       }
+      for(let i = 0; i < indicatorArray.length; i++){
+        console.log(indicatorArray[i])
+      }
+
 
       if(specialString == "Break"){
         return "None/Break"
