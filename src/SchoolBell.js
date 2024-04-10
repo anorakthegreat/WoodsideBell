@@ -5,6 +5,7 @@ import logo from './bannerlogo.webp';
 import axios from 'axios'; // Import Axios library for making HTTP requests
 import * as days from "./utils/CalendarType"
 import { specialCharMap } from '@testing-library/user-event/dist/keyboard';
+import ShareButton from './ShareButton';
 
 const SchoolBell = () => {
   const [scheduleData, setScheduleData] = useState([]);
@@ -17,6 +18,9 @@ const SchoolBell = () => {
   const [link, setLink] = useState("https://www.woodsidehs.org/");
   const [date, setDate] = useState("");
   const [dotw, setDOTW] = useState("");
+
+  const url = 'https://example.com';
+  const title = 'Check out this cool content!';
 
   //special days
   const [indicatorArray, setIndicator] = useState([])
@@ -1237,6 +1241,9 @@ const getDayy3 = (withDate, date) => {
           ))}
         </tbody>
       </table>
+
+      <ShareButton url={url} title={title} />
+
     </div>
   );
 };
