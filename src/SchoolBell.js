@@ -7,7 +7,7 @@ import * as days from "./utils/CalendarType"
 import { specialCharMap } from '@testing-library/user-event/dist/keyboard';
 import ShareButton from './ShareButton';
 
-const SchoolBell = () => {
+const SchoolBell = ({setQRCode, isQRCode}) => {
   const [scheduleData, setScheduleData] = useState([]);
   const [dayType, setDayType] = useState("");
   const [timeLeft, setTimeLeft] = useState("");
@@ -1133,6 +1133,13 @@ const getDayy3 = (withDate, date) => {
     return dates;
   };
 
+  const handleClicke = () => {
+    // Handle click event, such as navigating to another page
+    console.log('Heading clicked!');
+
+    setQRCode(true)
+  };
+
 
   // Define a function to handle the change in the dropdown selection
   const handleSelectChange = (event) => {
@@ -1203,7 +1210,11 @@ const getDayy3 = (withDate, date) => {
 
       
       <div class = "text-container">
-        <h2>Woodside High School Bell Schedule</h2>
+        <a href="#" onClick={handleClicke} className="heading-link">
+
+          <h2 className="heading" >Woodside High School Bell Schedule</h2>
+        </a>
+
       </div>
 
       <p>{beforeDay} {dayType}: {dotw}</p>

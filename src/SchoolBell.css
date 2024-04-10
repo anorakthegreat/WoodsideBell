@@ -150,9 +150,20 @@ td{
   font-size: 15px
 }
 
+.heading {
+  color: #000; /* Default color */
+  transition: color 0.3s, box-shadow 0.3s; /* Smooth transition effect for color and box-shadow */
+}
+
+.heading:hover {
+  color: #FFA500; /* Color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-2px); /* Move the button 4 pixels up */
+
+}
 
 
-
+/* MEDIA REQUESTS */
 
 @media screen and (max-width: 540px) {
   td {
