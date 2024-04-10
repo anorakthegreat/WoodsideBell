@@ -89,4 +89,29 @@
     align-items: flex-start; /* Align items to the left */
   }
 
+  .qr-code {
+    /* Set default size */
+    width: 500px;
+    height: 500px;
+  }
 
+  /* @media screen and (max-width: 400px) {
+    .bordered-wrapper {
+        padding: 10px 10px;
+
+    }
+  
+  } */
+
+  @media screen and (max-width: 700px) {
+    .bordered-wrapper {
+        padding: 30px 50px; /* Add padding to give some space inside the wrapper */
+
+    }
+
+    h4{
+        font-size: 20px; /* Font size based on viewport width */
+
+    }
+  
+  }
