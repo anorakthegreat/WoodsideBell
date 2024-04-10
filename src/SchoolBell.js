@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './SchoolBell.css';
 import { FOCUSABLE_SELECTOR, isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils';
 import logo from './bannerlogo.webp';
+import logo2 from './OIG1.jpg';
+
 import axios from 'axios'; // Import Axios library for making HTTP requests
 import * as days from "./utils/CalendarType"
 import { specialCharMap } from '@testing-library/user-event/dist/keyboard';
 import ShareButton from './ShareButton';
+import { act } from 'react-dom/test-utils';
 
 const SchoolBell = ({setQRCode, isQRCode}) => {
   const [scheduleData, setScheduleData] = useState([]);
@@ -921,6 +924,9 @@ const getDayy3 = (withDate, date) => {
       let dateEnd = new Date()
       dateEnd.setHours(endHours);
       dateEnd.setMinutes(minutesEnd);
+      dateEnd.setSeconds(60)
+      dateEnd.setMilliseconds(1000)
+
       // console.log(dateEnd)
       // console.log(dateEnd.getTime() + gapEnd)
       endEpoch = dateEnd.getTime() + gapEnd
@@ -936,8 +942,15 @@ const getDayy3 = (withDate, date) => {
       if(actualTime < endEpoch){
         if(startEpoch < actualTime){
           let x = (endEpoch - actualTime)/1000/60
-          x = x.toFixed(2)
+          // x = (endEpoch - actualTime)
+          // x = 1812777821991 - actualTime
           // console.log(x)
+          x = x.toFixed(3)
+          console.log("AHH")
+          // console.log(endEpoch)
+          // console.log(actualTime)
+          console.log(endEpoch)
+
           setTimeLeft(x + " minutes left in ")
           setCurrPeriod(period)
           return
@@ -1101,7 +1114,7 @@ const getDayy3 = (withDate, date) => {
     setDOTWW(new Date(date))
 
     
-    const intervalId = setInterval(loggg, 10);
+    const intervalId = setInterval(loggg, 1);
 
     return () => clearInterval(intervalId);
   },[date, dayType]); 
@@ -1209,6 +1222,9 @@ const getDayy3 = (withDate, date) => {
       </a>
 
       
+      
+
+      
       <div class = "text-container">
         <a href="#" onClick={handleClicke} className="heading-link">
 
@@ -1255,6 +1271,20 @@ const getDayy3 = (withDate, date) => {
       </table>
       
       <ShareButton url={url} title={title} />
+
+      <a href="https://anorakthegreat.github.io/WoodsideBell/" target="_blank" rel="noreferrer">
+        <img
+          className='logo2'
+          src={logo2}
+          alt="a"
+          style={{
+            position: 'absolute',
+            right: '20px', 
+            zIndex: 9999 
+          }}
+        />
+      </a>
+
 
     </div>
   );

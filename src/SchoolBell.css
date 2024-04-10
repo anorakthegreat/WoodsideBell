@@ -48,48 +48,6 @@
 
   }
 
-
-
-
-
-/* CHATGPT */
-/* .schedule-container {
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .schedule-table {
-    width: 100%;
-    max-width: 800px; 
-    border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .schedule-table th,
-  .schedule-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-    transition: background-color 0.3s ease;
-  }
-  
-  .schedule-table th {
-    background-color: #FFA500;
-    color: white;
-  }
-  
-  .schedule-table tr:hover td {
-    background-color: #f0f0f0;
-  } */
-
-
-
-
 p {
     font-size: 14px;
     padding: 8px;
@@ -138,12 +96,20 @@ h3 {
 }
   
 .dropdown-select:focus {
-    border-color: #007bff; /* Change border color when focused */
+    border-color: #007bff;
 }
 
 img {
   width: 100px; /* Adjust width for smaller screens */
   height: 100px;
+
+}
+
+.logo2 {
+  width: 60px; /* Adjust width for smaller screens */
+  height: 60px;
+  padding-bottom: 10px;
+
 }
 
 td{
