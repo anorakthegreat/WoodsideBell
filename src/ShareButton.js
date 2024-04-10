@@ -1,4 +1,5 @@
 import React from 'react';
+import './ShareButton.css'; // Import the CSS file for styling
 
 const ShareButton = ({ url, title }) => {
   const handleShare = () => {
@@ -16,7 +17,9 @@ const ShareButton = ({ url, title }) => {
   };
 
   return (
-    <button onClick={handleShare}>Share</button>
+    <button className="share-button" onClick={handleShare}>
+      <span className="icon">Share Me!</span>
+    </button>
   );
 };
 

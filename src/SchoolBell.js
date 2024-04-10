@@ -19,8 +19,8 @@ const SchoolBell = () => {
   const [date, setDate] = useState("");
   const [dotw, setDOTW] = useState("");
 
-  const url = 'https://example.com';
-  const title = 'Check out this cool content!';
+  const url = 'https://anorakthegreat.github.io/WoodsideBell/';
+  const title = 'ahhhhh';
 
   //special days
   const [indicatorArray, setIndicator] = useState([])
@@ -1045,7 +1045,8 @@ const getDayy3 = (withDate, date) => {
     let datta = [
       { arr: ['2024-04-08T00:00:00-08:00', '2024-04-09T00:00:00-08:00', '2024-04-10T00:00:00-08:00', '2024-04-11T00:00:00-08:00', '2024-04-12T00:00:00-08:00'], ind: "Break"},
       { arr: ['2024-03-05T00:00:00-08:00', '2024-04-15T00:00:00-08:00'], ind: "A Day"},
-      { arr: ['2024-04-05T00:00:00-08:00'], ind: "Wildcat"}
+      { arr: ['2024-04-05T00:00:00-08:00'], ind: "Wildcat"},
+      { arr: ['2024-04-17T00:00:00-08:00'], ind: "Minimum"}
 
     ]
 
@@ -1241,7 +1242,7 @@ const getDayy3 = (withDate, date) => {
           ))}
         </tbody>
       </table>
-
+      
       <ShareButton url={url} title={title} />
 
     </div>

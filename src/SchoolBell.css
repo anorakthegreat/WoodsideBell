@@ -98,6 +98,7 @@ p {
     display: inline-block;
     background-color: #e3f2fd; /* Light blue background */
     margin: 0;
+    width: 170px;
 }
 
 .h3-container {
@@ -149,7 +150,6 @@ td{
   font-size: 15px
 }
 
-/* 10px */
 
 
 
@@ -174,7 +174,13 @@ td{
     width: 100%; /* Make sure the container takes full width */
   }
 
+  .dropdown-select{
+    font-size: 12px;
+  }
+
 }
+
+
 
 @media screen and (max-width: 400px) {
   td {
@@ -197,9 +203,14 @@ td{
 
   p{
     font-size: 12px;
+    width: 150px;
   }
 
   h3{
+    font-size: 12px;
+  }
+
+  .dropdown-select{
     font-size: 12px;
   }
 
@@ -228,9 +239,15 @@ td{
 
   p{
     font-size: 10px;
+    width: 100px;
+
   }
 
   h3{
+    font-size: 10px;
+  }
+
+  .dropdown-select{
     font-size: 10px;
   }
 
