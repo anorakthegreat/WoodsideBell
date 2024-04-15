@@ -99,7 +99,8 @@ const SchoolBell = ({setQRCode, isQRCode}) => {
       "Minimum" : days.dayMin,
       "Reg" : days.dayReg,
       "Break" : days.dayBreak,
-      "Weekend" : days.dayWeekend
+      "Weekend" : days.dayWeekend,
+      "Final" : days.finals
 
     }
 
@@ -109,8 +110,19 @@ const SchoolBell = ({setQRCode, isQRCode}) => {
     if(day == "")
       return
 
+    if(rawType == "Final"){
+      data = calendar[rawType][specialString]
+      let datav3 = calculateDuration(data, specialString)
+      setDayType("Finals! ")
+      setScheduleData(datav3);
+      determineCurrentPeriod(datav3, day)
+      setUpdating(true)
+      return
+    }
+    
     data = calendar[specialString].data
 
+    
     if(rawType != "None"){
       if(rawType == "A DAY "){
         isADay = true
@@ -133,8 +145,6 @@ const SchoolBell = ({setQRCode, isQRCode}) => {
         lastPeriod+=2
       }
     }
-
-    console.log(data)
 
     if(specialString == "Weekend" || specialString == "Break"){
       setDayType("the " + specialString)
@@ -281,6 +291,8 @@ const SchoolBell = ({setQRCode, isQRCode}) => {
 
       let specialString = ""
 
+      let index = -1
+
       if(withDate){
         realStart = date 
 
@@ -327,6 +339,7 @@ const SchoolBell = ({setQRCode, isQRCode}) => {
               //   // return indicatorArray[i].ind
               //   // isBreak = true
               // }
+              index = m
               specialString = indicatorArray[i].ind 
 
             }
@@ -338,6 +351,25 @@ const SchoolBell = ({setQRCode, isQRCode}) => {
 
       if(specialString == "Break"){
         return "None/Break"
+      }
+
+      if(specialString == "Final"){
+        index+=1
+
+        let indexToWord = ""
+
+        if(index == 1){
+          indexToWord = "one"
+        } else if(index == 2){
+          indexToWord = "two"
+        }else if(index == 3){
+          indexToWord = "three"
+        }else if(index == 4){
+          indexToWord = "four"
+        }else{
+          indexToWord = "na"
+        }
+        return "Final/"+ indexToWord
       }
       
 
@@ -1056,10 +1088,11 @@ const getDayy3 = (withDate, date) => {
     // }
 
     let datta = [
-      { arr: ['2024-04-08T00:00:00-08:00', '2024-04-09T00:00:00-08:00', '2024-04-10T00:00:00-08:00', '2024-04-11T00:00:00-08:00', '2024-04-12T00:00:00-08:00'], ind: "Break"},
-      { arr: ['2024-03-05T00:00:00-08:00', '2024-04-15T00:00:00-08:00'], ind: "A Day"},
+      { arr: ['2024-04-08T00:00:00-08:00', '2024-04-09T00:00:00-08:00', '2024-04-10T00:00:00-08:00', '2024-04-11T00:00:00-08:00', '2024-04-12T00:00:00-08:00', '2024-05-27T00:00:00-08:00'], ind: "Break"},
+      { arr: ['2024-03-05T00:00:00-08:00', '2024-04-15T00:00:00-08:00', '2024-05-28T00:00:00-08:00'], ind: "A Day"},
       { arr: ['2024-04-05T00:00:00-08:00'], ind: "Wildcat"},
-      { arr: ['2024-04-17T00:00:00-08:00'], ind: "Minimum"}
+      { arr: ['2024-04-17T00:00:00-08:00'], ind: "Minimum"},
+      { arr: ['2024-06-03T00:00:00-08:00', '2024-06-04T00:00:00-08:00', '2024-06-05T00:00:00-08:00', '2024-06-06T00:00:00-08:00'], ind: "Final"}
 
     ]
 
