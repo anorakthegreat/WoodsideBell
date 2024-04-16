@@ -300,6 +300,7 @@ const SchoolBell = ({setQRCode, isQRCode}) => {
         realStart = new Date()  
 
       }
+      
 
       // console.log("INDICATOR ARAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY" + indicatorArray)
 
@@ -812,7 +813,9 @@ const getDayy3 = (withDate, date) => {
       startHours = hours
 
       let date = new Date()
+      // date.setHours(startHours);
       date.setHours(startHours);
+
       date.setMinutes(minutes);
       // console.log(date)
       // console.log(date.getTime() + gapStart)
@@ -902,6 +905,9 @@ const getDayy3 = (withDate, date) => {
       return
     }
 
+    let datep = new Date();
+    let hours24 = date.getHours();
+    let minutes24 = date.getMinutes();
     // if(scheduleData[2] == undefined){
     //   return
 
@@ -925,7 +931,11 @@ const getDayy3 = (withDate, date) => {
       const [time, meridiem] = timeString.split(' '); // Split the time string into time and meridiem (AM/PM)
       const [hours, minutes] = time.split(':').map(Number); // Split hours and minutes and convert them to numbers
 
-      if (timeString.includes("PM")) {
+      if (timeString.includes("PM") && hours != 12) {
+        if(period == "Lunch"){
+          console.log("I INCREASED START")
+        }
+
           startHours = hours + 12;
           gapStart += 43200000
       } else{
@@ -946,6 +956,9 @@ const getDayy3 = (withDate, date) => {
 
       if (endTime.includes("PM") && hoursEnd != 12) {
         // endHours = hoursEnd + 12;
+        if(period == "Lunch"){
+          console.log("I INCREASED END")
+        }
         gapEnd += 43200000
       } else{
         // endHours = hoursEnd
@@ -956,8 +969,8 @@ const getDayy3 = (withDate, date) => {
       let dateEnd = new Date()
       dateEnd.setHours(endHours);
       dateEnd.setMinutes(minutesEnd);
-      dateEnd.setSeconds(60)
-      dateEnd.setMilliseconds(1000)
+      dateEnd.setSeconds(0)
+      dateEnd.setMilliseconds(0)
 
       // console.log(dateEnd)
       // console.log(dateEnd.getTime() + gapEnd)
@@ -965,23 +978,29 @@ const getDayy3 = (withDate, date) => {
 
       let actualDate = new Date()
       
-      // actualDate.setHours(11)
-      // actualDate.setMinutes(40)
+      actualDate.setHours(hours24)
+      actualDate.setMinutes(minutes24)
 
       let actualTime = actualDate.getTime()
       
       // actualTime.setHours(11)
       if(actualTime < endEpoch){
+        if(period == "Lunch"){
+          // console.log("AHAH")
+          // console.log("ACTUAL DATE" + actualDate)
+          // console.log("DATE START" + date)
+          // console.log(actualTime - startEpoch)
+        }
         if(startEpoch < actualTime){
           let x = (endEpoch - actualTime)/1000/60
           // x = (endEpoch - actualTime)
           // x = 1812777821991 - actualTime
           // console.log(x)
           x = x.toFixed(3)
-          console.log("AHH")
+          // console.log("AHH")
           // console.log(endEpoch)
           // console.log(actualTime)
-          console.log(endEpoch)
+          // console.log(endEpoch)
 
           setTimeLeft(x + " minutes left in ")
           setCurrPeriod(period)
