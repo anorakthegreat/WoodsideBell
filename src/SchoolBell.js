@@ -1193,13 +1193,14 @@ const getDayy3 = (withDate, date) => {
     const dates = [];
     const today = new Date();
 
-    for (let i = 0; i <= 100; i++) {
+    for (let i = 1; i <= 100; i++) {
       let date = new Date(today);
       date.setDate(today.getDate() + i);
       date.setHours(0)
       date.setMinutes(0)
       dates.push(date.toISOString().slice(0, 10)); // Format: YYYY-MM-DD
     }
+    dates.unshift("TODAY")
     return dates;
   };
 
@@ -1219,6 +1220,11 @@ const getDayy3 = (withDate, date) => {
 
     let dateString = event.target.value   
     let date = new Date()
+
+    if(dateString == "TODAY"){
+      let datem = new Date()
+      dateString = datem.toISOString().slice(0, 10)
+    }
     let components = dateString.split("-");
 
     let year = (components[0])
