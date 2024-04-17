@@ -905,9 +905,18 @@ const getDayy3 = (withDate, date) => {
       return
     }
 
+
     let datep = new Date();
-    let hours24 = date.getHours();
-    let minutes24 = date.getMinutes();
+
+    let hours24 = 0
+    let minutes24 = 0
+    try{
+      hours24 = date.getHours();
+      minutes24 = date.getMinutes();
+    } catch{
+      return
+    }
+    
     // if(scheduleData[2] == undefined){
     //   return
 
@@ -1160,19 +1169,24 @@ const getDayy3 = (withDate, date) => {
     
     
 
-    // console.log("NEWWW DAEEEEEEEEEEEEEEEEEEEEEEEEEEE" + date)
     let string = getDayy(true, new Date(date))
-    // console.log("NEWWW DAEEEEEEEEEEEEEEEEEEEEEEEEEEE" + string)
-    // console.log(string)
     fetchData(string);
-    // console.log(dayType)
     setDOTWW(new Date(date))
+
+    document.addEventListener('visibilitychange', reload);
 
     
     const intervalId = setInterval(loggg, 1);
 
     return () => clearInterval(intervalId);
   },[date, dayType]); 
+
+  const reload = () => {
+    console.log("I RAN")
+    let string = getDayy(true, new Date(date))
+    fetchData(string);
+    setDOTWW(new Date(date))
+  };
 
   // useEffect(() => {
 
@@ -1211,7 +1225,7 @@ const getDayy3 = (withDate, date) => {
 
   const update = () => {
     // Handle click event, such as navigating to another page
-    let x = 0.5
+    let x = 0.6
     console.log('UPDATE VERSION: ' + x);
 
   };
