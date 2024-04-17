@@ -21,6 +21,7 @@ const SchoolBell = ({setQRCode, isQRCode}) => {
   const [link, setLink] = useState("https://www.woodsidehs.org/");
   const [date, setDate] = useState("");
   const [dotw, setDOTW] = useState("");
+  const [schoolOver, setSchoolOver] = useState("");
 
   const url = 'https://anorakthegreat.github.io/WoodsideBell/';
   const title = 'ahhhhh';
@@ -44,7 +45,7 @@ const SchoolBell = ({setQRCode, isQRCode}) => {
 
 
     determineCurrentPeriod2(scheduleData)
-
+    determineSchoolLeft(scheduleData)
 
     let currTime = new Date()
     currTime = currTime.getTime()
@@ -891,6 +892,74 @@ const getDayy3 = (withDate, date) => {
       return closestDate;
   }
 
+  const determineSchoolLeft = (data) =>{
+
+    // let container = document.getElementById('schoolLeftContainer');
+    // container.style.display = 'block';
+
+    let x = data[data.length - 1]
+
+    if(x == undefined){
+      return
+    }
+    x = x.time
+    let gapEnd = 0
+
+    const [startTime, endTime] = x.split(' - '); // Split the time range string into start time and end time
+
+    const [timeEnd, meridiemEnd] = endTime.split(' '); // Split the time string into time and meridiem (AM/PM)
+    const [hoursEnd, minutesEnd] = timeEnd.split(':').map(Number); // Split hours and minutes and convert them to numbers
+
+    if (endTime.includes("PM") && hoursEnd != 12) {
+      gapEnd += 43200000
+    } else{
+      // endHours = hoursEnd
+    }
+
+
+    let dateEnd = new Date()
+    dateEnd.setHours(hoursEnd );
+    dateEnd.setMinutes(minutesEnd);
+    dateEnd.setSeconds(0)
+    dateEnd.setMilliseconds(0)
+
+    // console.log(dateEnd)
+
+    let endEpoch = dateEnd.getTime() + gapEnd
+
+
+
+    let hours24 = 0
+    let minutes24 = 0
+    try{
+      hours24 = date.getHours();
+      minutes24 = date.getMinutes();
+    } catch{
+      return
+    }
+
+    
+
+    let currDate = new Date()
+    currDate.setHours(hours24)
+    currDate.setMinutes(minutes24)
+    
+
+    let actualTime = currDate.getTime()
+
+    let timeDiff = endEpoch - actualTime
+
+    timeDiff = (endEpoch - actualTime)/1000/60
+
+    // setSchoolOver(timeDiff +)
+
+    timeDiff = timeDiff.toFixed(1)
+    setSchoolOver(timeDiff + " minutes left today")
+
+
+
+
+  }
   const determineCurrentPeriod2 = (data) => {
     // console.log(dayType == "")
     // console.log(dayType)
@@ -911,12 +980,13 @@ const getDayy3 = (withDate, date) => {
     let hours24 = 0
     let minutes24 = 0
     try{
-      hours24 = date.getHours();
-      minutes24 = date.getMinutes();
+      hours24 = datep.getHours();
+      minutes24 = datep.getMinutes();
     } catch{
       return
     }
     
+    // console.log(minutes24)
     // if(scheduleData[2] == undefined){
     //   return
 
@@ -994,6 +1064,8 @@ const getDayy3 = (withDate, date) => {
       // actualDate.setMinutes(25)
 
       let actualTime = actualDate.getTime()
+
+      // console.log(actualDate)
       
       // actualTime.setHours(11)
       if(actualTime <= endEpoch){
@@ -1006,7 +1078,7 @@ const getDayy3 = (withDate, date) => {
         if(startEpoch <= actualTime){
           let x = (endEpoch - actualTime)/1000/60
           // x = (endEpoch - actualTime)
-          // x = 1812777821991 - actualTime
+          // x = 1812777821991 - actualTimesss
           // console.log(x)
           x = x.toFixed(3)
           // console.log("AHH")
@@ -1225,7 +1297,7 @@ const getDayy3 = (withDate, date) => {
 
   const update = () => {
     // Handle click event, such as navigating to another page
-    let x = 0.6
+    let x = 0.7
     console.log('UPDATE VERSION: ' + x);
 
   };
@@ -1322,6 +1394,11 @@ const getDayy3 = (withDate, date) => {
 
       <div class="h3-container">
         <h3>{timeLeft} {currPeriod}</h3>
+        
+      </div>
+
+      <div class="schoolLeftContainer">
+        <h3>{schoolOver}</h3>
       </div>
 
       <div className="dropdown-container">
