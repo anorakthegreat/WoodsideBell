@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/WoodsideBell/static/css/main.4ea96f5a.css",
-    "main.js": "/WoodsideBell/static/js/main.7d79cd77.js",
+    "main.js": "/WoodsideBell/static/js/main.060d5752.js",
     "static/js/453.bb2196f4.chunk.js": "/WoodsideBell/static/js/453.bb2196f4.chunk.js",
     "static/media/OIG1.jpg": "/WoodsideBell/static/media/OIG1.d6e735ca59da147b3307.jpg",
     "static/media/bannerlogo.webp": "/WoodsideBell/static/media/bannerlogo.eddcc681e1e81587fed8.webp",
     "static/media/logo.svg": "/WoodsideBell/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/WoodsideBell/index.html",
     "main.4ea96f5a.css.map": "/WoodsideBell/static/css/main.4ea96f5a.css.map",
-    "main.7d79cd77.js.map": "/WoodsideBell/static/js/main.7d79cd77.js.map",
+    "main.060d5752.js.map": "/WoodsideBell/static/js/main.060d5752.js.map",
     "453.bb2196f4.chunk.js.map": "/WoodsideBell/static/js/453.bb2196f4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4ea96f5a.css",
-    "static/js/main.7d79cd77.js"
+    "static/js/main.060d5752.js"
   ]
 }
