@@ -42,6 +42,8 @@ const SchoolBell = ({setQRCode, isQRCode}) => {
 
     // console.log(getDayy(true, detee))
 
+    console.log(currPeriod)
+
     determineCurrentPeriod2(scheduleData)
 
 
@@ -981,17 +983,20 @@ const getDayy3 = (withDate, date) => {
       actualDate.setHours(hours24)
       actualDate.setMinutes(minutes24)
 
+      // actualDate.setHours(11)
+      // actualDate.setMinutes(25)
+
       let actualTime = actualDate.getTime()
       
       // actualTime.setHours(11)
-      if(actualTime < endEpoch){
+      if(actualTime <= endEpoch){
         if(period == "Lunch"){
           // console.log("AHAH")
           // console.log("ACTUAL DATE" + actualDate)
           // console.log("DATE START" + date)
           // console.log(actualTime - startEpoch)
         }
-        if(startEpoch < actualTime){
+        if(startEpoch <= actualTime){
           let x = (endEpoch - actualTime)/1000/60
           // x = (endEpoch - actualTime)
           // x = 1812777821991 - actualTime
@@ -1310,9 +1315,19 @@ const getDayy3 = (withDate, date) => {
             <th>Duration</th>
           </tr>
         </thead>
+        {/* <tbody>
+          {scheduleData.map((entry, index) => (
+            <tr key={index} style={{ backgroundColor: entry.period == currPeriod ? '#c68522' : 'white' }} className={entry.period == currPeriod ? 'highlighted' : 'nonhigh'}>
+              <td>{entry.period}</td>
+              <td>{entry.time}</td>
+              <td>{entry.duration} minutes</td>
+
+            </tr>
+          ))}
+        </tbody> */}
         <tbody>
           {scheduleData.map((entry, index) => (
-            <tr key={index}>
+            <tr key={index}  className={entry.period == currPeriod ? 'highlighted' : 'nonhigh'}>
               <td>{entry.period}</td>
               <td>{entry.time}</td>
               <td>{entry.duration} minutes</td>
@@ -1320,6 +1335,17 @@ const getDayy3 = (withDate, date) => {
             </tr>
           ))}
         </tbody>
+
+        {/* <tbody>
+          {scheduleData.map((entry, index) => (
+            <tr key={index} style={{ backgroundColor:'white'}}>
+              <td>{entry.period}</td>
+              <td>{entry.time}</td>
+              <td>{entry.duration} minutes</td>
+
+            </tr>
+          ))}
+        </tbody> */}
       </table>
       
       <ShareButton url={url} title={title} />

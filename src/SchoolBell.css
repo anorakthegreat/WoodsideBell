@@ -20,8 +20,25 @@
     color: white;
 }
   
-.schedule-table tr:hover td {
-    background-color: #f0f0f0;
+/* .schedule-table tr:hover td {
+  background-color: #f0f0f0;
+
+} */
+
+.highlighted:hover{
+  background-color: rgb(208, 114, 14); 
+}
+
+.highlighted{
+  background-color: rgb(223, 140, 52); 
+}
+
+.nonhigh{
+  background-color: white; 
+}
+
+.nonhigh:hover{
+  background-color: #f0f0f0;
 }
 
 /* .schedule-container {
