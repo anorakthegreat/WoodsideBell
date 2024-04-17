@@ -42,7 +42,6 @@ const SchoolBell = ({setQRCode, isQRCode}) => {
 
     // console.log(getDayy(true, detee))
 
-    console.log(currPeriod)
 
     determineCurrentPeriod2(scheduleData)
 
@@ -262,7 +261,6 @@ const SchoolBell = ({setQRCode, isQRCode}) => {
       // console.log(sta)
 
       
-      console.log("DURRR: " + dur)
       dur = dur / 60000
       data[i].duration = Math.round(dur);
 
@@ -1211,6 +1209,14 @@ const getDayy3 = (withDate, date) => {
     setQRCode(true)
   };
 
+  const update = () => {
+    // Handle click event, such as navigating to another page
+    let x = 0.5
+    console.log('UPDATE VERSION: ' + x);
+
+  };
+
+
 
   // Define a function to handle the change in the dropdown selection
   const handleSelectChange = (event) => {
@@ -1356,7 +1362,7 @@ const getDayy3 = (withDate, date) => {
       
       <ShareButton url={url} title={title} />
 
-      <a href="https://anorakthegreat.github.io/WoodsideBell/" target="_blank" rel="noreferrer">
+      <a target="_blank" rel="noreferrer">
         <img
           className='logo2'
           src={logo2}
@@ -1366,6 +1372,7 @@ const getDayy3 = (withDate, date) => {
             right: '20px', 
             zIndex: 9999 
           }}
+          onClick={update}
         />
       </a>
 

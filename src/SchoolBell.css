@@ -126,8 +126,14 @@ img {
   width: 60px; /* Adjust width for smaller screens */
   height: 60px;
   padding-bottom: 10px;
+  cursor: pointer; /* Change the cursor to a pointer when hovering */
+
+
 
 }
+
+
+
 
 td{
   font-size: 15px
