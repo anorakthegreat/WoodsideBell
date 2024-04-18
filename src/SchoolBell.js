@@ -1297,7 +1297,7 @@ const getDayy3 = (withDate, date) => {
 
   const update = () => {
     // Handle click event, such as navigating to another page
-    let x = 0.8
+    let x = 0.9
     console.log('UPDATE VERSION: ' + x);
 
   };
@@ -1405,10 +1405,13 @@ const getDayy3 = (withDate, date) => {
 
       <div className="dropdown-container">
         <select value={selectedDate} onChange={handleSelectChange} className="dropdown-select">
-          <option value="">{selectedDate}</option>
-          {dates.map((date, index) => (
+        {selectedDate === "Select A Date" && <option value="">{selectedDate}</option>}
+          {dates
+          .filter(date => date !== "") // Exclude selected date from options
+          .map((date, index) => (
             <option key={index} value={date}>{date}</option>
-          ))}
+          ))
+      }
         </select>
       </div>
 
