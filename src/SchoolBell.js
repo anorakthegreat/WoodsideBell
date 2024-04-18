@@ -1011,9 +1011,9 @@ const getDayy3 = (withDate, date) => {
       const [hours, minutes] = time.split(':').map(Number); // Split hours and minutes and convert them to numbers
 
       if (timeString.includes("PM") && hours != 12) {
-        if(period == "Lunch"){
-          console.log("I INCREASED START")
-        }
+        // if(period == "Lunch"){
+        //   console.log("I INCREASED START")
+        // }
 
           startHours = hours + 12;
           gapStart += 43200000
@@ -1297,7 +1297,7 @@ const getDayy3 = (withDate, date) => {
 
   const update = () => {
     // Handle click event, such as navigating to another page
-    let x = 0.7
+    let x = 0.8
     console.log('UPDATE VERSION: ' + x);
 
   };
@@ -1315,6 +1315,8 @@ const getDayy3 = (withDate, date) => {
 
     if(dateString == "TODAY"){
       let datem = new Date()
+      datem.setHours(0)
+      datem.setMinutes(0)
       dateString = datem.toISOString().slice(0, 10)
     }
     let components = dateString.split("-");
@@ -1397,9 +1399,9 @@ const getDayy3 = (withDate, date) => {
         
       </div>
 
-      <div class="schoolLeftContainer">
+      {/* <div class="schoolLeftContainer">
         <h3>{schoolOver}</h3>
-      </div>
+      </div> */}
 
       <div className="dropdown-container">
         <select value={selectedDate} onChange={handleSelectChange} className="dropdown-select">
